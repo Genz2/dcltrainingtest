@@ -9,7 +9,6 @@ include: "*.dashboard"
 
 
 explore: order_items {
-  hidden: yes
   join: orders {
     type: left_outer
     sql_on: ${order_items.order_id} = ${orders.id} ;;
