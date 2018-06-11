@@ -8,6 +8,15 @@ include: "*.dashboard"
 
 
 
+explore: inventory_items {
+  hidden: yes
+  join: products {
+    type: left_outer
+    sql_on: ${inventory_items.product_id} = ${products.id} ;;
+    relationship: many_to_one
+  }
+}
+
 explore: order_items {
   join: orders {
     type: left_outer
@@ -34,4 +43,28 @@ explore: order_items {
   }
 }
 
-explore: orders {}
+explore: orders {
+  hidden: yes
+  join: users {
+    type: left_outer
+    sql_on: ${orders.user_id} = ${users.id} ;;
+    relationship: many_to_one
+  }
+}
+
+explore: product_facts {
+  hidden: yes
+  join: products {
+    type: left_outer
+    sql_on: ${product_facts.product_id} = ${products.id} ;;
+    relationship: many_to_one
+  }
+}
+
+explore: products {
+  hidden: yes
+}
+
+explore: users {
+  hidden:  yes
+}
