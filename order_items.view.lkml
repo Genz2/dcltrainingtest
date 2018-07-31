@@ -38,7 +38,7 @@ view: order_items {
     sql: ${TABLE}.sale_price ;;
   }
 
- dimension: cheap_item {
+ dimension: is_cheap_item {
    type: yesno
    sql: ${sale_price}<3 ;;
  }
