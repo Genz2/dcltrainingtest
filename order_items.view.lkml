@@ -38,6 +38,11 @@ view: order_items {
     sql: ${TABLE}.sale_price ;;
   }
 
+ dimension: is_cheap_item {
+   type: yesno
+   sql: ${sale_price}<3 ;;
+ }
+
   measure: count {
     type: count
     drill_fields: [id, orders.id, inventory_items.id]
