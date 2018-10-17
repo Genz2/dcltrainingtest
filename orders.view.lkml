@@ -45,4 +45,37 @@ view: orders {
     type: number
     sql: ${count_organic_users}/${count} ;;
   }
+
+  parameter: metric_selector {
+    type: string
+    allowed_value: {
+      label: "Count"
+      value: "count"
+    }
+    allowed_value: {
+      label: "Count Organic Users"
+      value: "count_organic_users"
+    }
+    allowed_value: {
+      label: "Returning Shopper Revenue"
+      value: "percent_organic_users"
+    }
+  }
+
+  measure: dynamic_metric {
+    label_from_parameter: metric_selector
+    type: number
+    sql:
+      CASE
+        WHEN {% parameter metric_selector %} = 'count' THEN
+          ${count}
+        WHEN {% parameter metric_selector %} = 'count_organic_users' THEN
+          ${count_organic_users}
+        WHEN {% parameter metric_selector %} = 'percent_organic_users' THEN
+          ${percent_organic_users}
+        ELSE
+          NULL
+      END ;;
+    }
+
 }
