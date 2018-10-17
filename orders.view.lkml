@@ -32,6 +32,7 @@ view: orders {
     type: count
     drill_fields: [id, users.id, users.first_name, users.last_name, order_items.count]
   }
+
   measure: count_organic_users {
     type: count_distinct
     sql:  ${user_id} ;;
@@ -41,9 +42,21 @@ view: orders {
       value: "Organic"
     }
   }
+
+
   measure: percent_organic_users {
     type: number
     sql: ${count_organic_users}/${count} ;;
+  }
+
+  measure: count_email_users {
+    type: count_distinct
+    sql:  ${user_id} ;;
+    drill_fields: [id, users.id, users.first_name, users.last_name, order_items.count]
+    filters: {
+      field: traffic_source
+      value: "Email"
+    }
   }
 
   parameter: metric_selector {
@@ -57,8 +70,8 @@ view: orders {
       value: "count_organic_users"
     }
     allowed_value: {
-      label: "Returning Shopper Revenue"
-      value: "percent_organic_users"
+      label: "Count Email Users"
+      value: "count_email_users"
     }
   }
 
@@ -71,8 +84,8 @@ view: orders {
           ${count}
         WHEN {% parameter metric_selector %} = 'count_organic_users' THEN
           ${count_organic_users}
-        WHEN {% parameter metric_selector %} = 'percent_organic_users' THEN
-          ${percent_organic_users}
+        WHEN {% parameter metric_selector %} = 'count_email_users' THEN
+          ${count_email_users}
         ELSE
           NULL
       END ;;
