@@ -1,9 +1,13 @@
+## This model file is used for the extends (DRY) course in SkillJar
+## Please DO NOT CHANGE THE PRODUCTION VERSION of this file
+
 connection: "thelook"
 
 include: "*.view.lkml"                       # include all views in this project
 # include: "my_dashboard.dashboard.lookml"   # include a LookML dashboard called my_dashboard
 
 explore: users {
+
   join: orders {
     type: left_outer
     sql_on: ${orders.user_id} = ${users.id} ;;
@@ -11,9 +15,5 @@ explore: users {
   }
 }
 
-# create an explore called user_explore_extended
-# This new explore should be done in three lines
-#
-# explore: users_extended {
-#   extends: [users]
-# }
+# Create an explore called users_new
+# This new explore should be done in 4 lines
