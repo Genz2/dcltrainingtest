@@ -14,5 +14,13 @@ explore: users {
   }
 }
 
-# Create an explore called users_new
-# This new explore should be done in 4 lines
+## Create an explore called users_new for use in extending explores
+
+
+
+
+
+
+
+
+## Create an explore named buyers_and_sellers for advanced explore extending
