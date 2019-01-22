@@ -21,7 +21,7 @@ explore: inventory_items {
 explore: orders_derived {}
 
 # Option 2: Join in orders_derived back into the order_items explore.
-# Note that we join on the only shared dimension we have, naely Users City
+# Note that we join on the only shared dimension we have, namely Users City
 explore: order_items {
   join: orders {
     type: left_outer
