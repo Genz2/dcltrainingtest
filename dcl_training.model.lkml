@@ -44,7 +44,7 @@ explore: order_items {
   join: orders_derived {
     type: left_outer
     relationship: many_to_one
-    sql: ${orders_derived.city} = ${users.city} ;;
+    sql_on: ${orders_derived.city} = ${users.city} ;;
   }
 
   join: products {
