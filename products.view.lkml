@@ -22,6 +22,51 @@ view: products {
     sql: ${TABLE}.department ;;
   }
 
+  # HTML Tests
+  dimension: department_1 {
+    type: string
+    label: "Paragraph"
+    group_label: "HTML Tests"
+    sql: ${TABLE}.department ;;
+    html: <p style="color:gray;
+              text-align:center;
+              background-color: powderblue;
+              font-family:arial;
+              font-size:120%">
+              This is a paragraph! </p>;;
+  }
+  dimension: department_2 {
+    type: string
+    label: "Unordered List"
+    group_label: "HTML Tests"
+    sql: ${TABLE}.department ;;
+    html: <ul>
+          <li> list_item_1 </li> <li> list_item_2 </li> </ul>;;
+  }
+  dimension: department_3 {
+    type: string
+    label: "Ordered List"
+    group_label: "HTML Tests"
+    sql: ${TABLE}.department ;;
+    html: <ol>
+      <li> list_item_1 </li> <li> list_item_2 </li> </ol>;;
+  }
+  dimension: department_4 {
+    type: string
+    label: "Anchor"
+    group_label: "HTML Tests"
+    sql: ${TABLE}.department ;;
+    html: <a href="https://google.com">
+          Click this link to go to Google!</a>;;
+  }
+  dimension: department_5 {
+    type: string
+    label: "Image"
+    group_label: "HTML Tests"
+    sql: ${TABLE}.department ;;
+    html: <img src="https://gfnc1kn6pi-flywheel.netdna-ssl.com/wp-content/uploads/2017/10/goldie.jpg" alt="Golden Retriever puppy" style="width:100%">;;
+  }
+
   dimension: item_name {
     type: string
     sql: ${TABLE}.item_name ;;

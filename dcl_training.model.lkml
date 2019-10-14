@@ -17,6 +17,11 @@ explore: inventory_items {
   }
 }
 
+# Option 1: Simple explore on just orders_derived.
+explore: orders_derived {}
+
+# Option 2: Join in orders_derived back into the order_items explore.
+# Note that we join on the only shared dimension we have, namely Users City
 explore: order_items {
   join: orders {
     type: left_outer
@@ -34,6 +39,12 @@ explore: order_items {
     type: left_outer
     sql_on: ${orders.user_id} = ${users.id} ;;
     relationship: many_to_one
+  }
+
+  join: orders_derived {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${orders_derived.city} = ${users.city} ;;
   }
 
   join: products {
