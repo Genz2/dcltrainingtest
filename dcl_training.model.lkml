@@ -18,7 +18,9 @@ explore: inventory_items {
 }
 
 # Option 1: Simple explore on just orders_derived.
-explore: orders_derived {}
+explore: orders_derived {
+  hidden: yes
+}
 
 # Option 2: Join in orders_derived back into the order_items explore.
 # Note that we join on the only shared dimension we have, namely Users City
