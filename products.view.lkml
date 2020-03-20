@@ -67,6 +67,19 @@ view: products {
     html: <img src="https://gfnc1kn6pi-flywheel.netdna-ssl.com/wp-content/uploads/2017/10/goldie.jpg" alt="Golden Retriever puppy" style="width:100%">;;
   }
 
+  dimension: department_6 {
+    type: string
+    label: "Paragraph with Value"
+    group_label: "HTML Tests"
+    sql: ${TABLE}.department ;;
+    html: <p style="color:gray;
+              text-align:center;
+              background-color: powderblue;
+              font-family:arial;
+              font-size:120%">
+              This is a paragraph that also shows the department name: {{value}} </p>;;
+  }
+
   dimension: item_name {
     type: string
     sql: ${TABLE}.item_name ;;
