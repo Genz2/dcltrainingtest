@@ -81,3 +81,5 @@ explore: products {
 explore: users {
   hidden:  yes
 }
+
+explore: dimensionalize_solution {}
