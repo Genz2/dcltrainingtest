@@ -83,3 +83,4 @@ explore: users {
 }
 
 explore: dimensionalize_solution {}
+explore: dimensionalize_ndt_solution {}
