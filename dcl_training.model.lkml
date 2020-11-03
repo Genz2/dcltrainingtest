@@ -82,5 +82,5 @@ explore: users {
   hidden:  yes
 }
 
-explore: dimensionalize_solution {}
-explore: dimensionalize_ndt_solution {}
+explore: dimensionalize_solution { hidden: yes}
+explore: dimensionalize_ndt_solution {hidden: yes}
