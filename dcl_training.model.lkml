@@ -85,4 +85,4 @@ explore: users {
 explore: dimensionalize_solution { hidden: yes}
 explore: dimensionalize_ndt_solution {hidden: yes}
 
-explore: union_orders {hidden: yes}
+explore: union_orders {hidden: yes} #errors here are intentional
