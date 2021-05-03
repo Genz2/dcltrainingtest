@@ -85,7 +85,7 @@ view: products {
     group_label: "HTML Tests"
     link: {
       label: "Google search"
-      url: "https://www.google.com/search?q={{value}}"
+      url: "https://www.google.com/search?q={{value | url_encode}}"
     }
     sql: ${brand} ;;
   }
@@ -113,5 +113,16 @@ view: products {
   measure: count {
     type: count
     drill_fields: [id, item_name, inventory_items.count, product_facts.count]
+  }
+
+  measure: count_conditional {
+    type: count
+    html: <p style=
+    {% if orders.status._value == "complete" %}
+    "color:green"</p>
+    {% else %}
+    "color:blue"</p>
+    {% endif %}
+    ;;
   }
 }
