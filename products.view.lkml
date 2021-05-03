@@ -80,6 +80,16 @@ view: products {
               This is a paragraph that also shows the department name: {{value}} </p>;;
   }
 
+  dimension: linked_brand {
+    type: string
+    group_label: "HTML Tests"
+    link: {
+      label: "Google search"
+      url: "https://www.google.com/search?q={{value}}"
+    }
+    sql: ${brand} ;;
+  }
+
   dimension: item_name {
     type: string
     sql: ${TABLE}.item_name ;;
