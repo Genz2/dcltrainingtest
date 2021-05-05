@@ -88,3 +88,12 @@ explore: dimensionalize_ndt_solution {hidden: yes}
 explore: union_orders {hidden: yes} #errors here are intentional
 explore: users_row { hidden: yes}
 explore: orders_derived_example {}
+
+explore: order_items_access_filters {
+  extends: [order_items]
+  view_name: order_items
+  access_filter: {
+    field: users.state
+    user_attribute: state
+  }
+}
