@@ -8,5 +8,8 @@
   "gender":"性別",
   "last_name":"姓",
   "state":"州",
-  "zip":"郵便番号"
+  "zip":"郵便番号",
+  "traffic_source":"ソース",
+  "created_date":"日付",
+  "count":"合計"
 }

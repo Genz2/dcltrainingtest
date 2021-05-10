@@ -8,5 +8,6 @@
   "gender":"Gender",
   "last_name":"Last Name",
   "state":"US State",
-  "zip":"Zip Code"
+  "zip":"Zip Code",
+  "created_date":"Date of Creation"
 }
