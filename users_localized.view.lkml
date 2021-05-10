@@ -2,22 +2,26 @@ view: users_localized {
   sql_table_name: public.users ;;
 
   dimension: id {
+    label: "id"
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
   }
 
   dimension: age {
+    label: "age"
     type: number
     sql: ${TABLE}.age ;;
   }
 
   dimension: city {
+    label: "city"
     type: string
     sql: ${TABLE}.city ;;
   }
 
   dimension: country {
+    label: "country"
     type: string
     sql: ${TABLE}.country ;;
   }
@@ -28,26 +32,31 @@ view: users_localized {
   }
 
   dimension: email {
+    label: "email"
     type: string
     sql: ${TABLE}.email ;;
   }
 
   dimension: first_name {
+    label: "first_name"
     type: string
     sql: ${TABLE}.first_name ;;
   }
 
   dimension: gender {
+    label: "gender"
     type: string
     sql: ${TABLE}.gender ;;
   }
 
   dimension: last_name {
+    label: "last_name"
     type: string
     sql: ${TABLE}.last_name ;;
   }
 
   dimension: state {
+    label: "state"
     type: string
     sql: ${TABLE}.state ;;
   }
@@ -58,6 +67,7 @@ view: users_localized {
   }
 
   dimension: zip {
+    label: "zip"
     type: number
     sql: ${TABLE}.zip ;;
   }

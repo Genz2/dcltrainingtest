@@ -1,0 +1,12 @@
+{
+  "id": "ID番号",
+  "age": "年齢",
+  "city":"都市",
+  "country":"国",
+  "email":"メール",
+  "first_name":"名前",
+  "gender":"性別",
+  "last_name":"姓",
+  "state":"州",
+  "zip":"郵便番号"
+}
