@@ -23,7 +23,7 @@ Welcome to Looker, your self-service data portal!
 </div>
 
 <div style=" float: left; margin-bottom: 15px; width: 100%;">
-  <h5 style="float: left; padding: 15px 25px; background-color: #1e5fa3; border-radius: 5px; width: 240px; margin: 10px 15px 20px 0; text-align: center;"><a target="_blank" style="color: #fff; text-transform: uppercase;" href="https://dcltraining.dev.looker.com/explore/dcl_training/order_items">Accessing Orders Data with Looker</a></h5>
+  <h5 style="float: left; padding: 15px 25px; background-color: #1e5fa3; border-radius: 5px; width: 240px; margin: 10px 15px 20px 0; text-align: center;"><a target="_blank" style="color: #fff; text-transform: uppercase;" href="https://dcltraining.dev.looker.com/explore/dcl_training/order_items">Explore Order Items</a></h5>
   <div style="text-align: left; font-size: 17px;">
     <p style="font-weight: 300; margin-top: 17px;">Build your own reports using the Order Items explore.</p>
   </div>
