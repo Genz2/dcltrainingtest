@@ -53,6 +53,7 @@ view: users {
   }
 
   dimension: irish_county {
+    map_layer_name: irish_counties
     description: "Totally fake county data built from existing US State info. Built to answer https://community.looker.com/technical-tips-tricks-1021/how-to-create-a-topojson-file-for-use-in-a-custom-map-layer-26084?postid=47181#post47181"
     type: string
     sql: CASE
