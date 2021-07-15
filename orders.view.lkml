@@ -10,7 +10,6 @@ view: orders {
   dimension_group: created {
     type: time
     sql: ${TABLE}.created_at ;;
-    description: "This is a dimension group!"
   }
 
   dimension: status {
