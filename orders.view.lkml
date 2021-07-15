@@ -15,6 +15,7 @@ view: orders {
   dimension: status {
     type: string
     sql: ${TABLE}.status ;;
+    description: "status"
   }
 
   dimension: traffic_source {
