@@ -42,6 +42,11 @@ explore: order_items {
     sql_on: ${orders.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
+  join: sql_runner_query_test {
+    type: left_outer
+    sql_on: ${sql_runner_query_test.users_city} = ${users.city} ;;
+    relationship: one_to_many
+  }
 
   join: orders_derived {
     type: left_outer

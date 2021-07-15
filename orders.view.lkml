@@ -10,6 +10,7 @@ view: orders {
   dimension_group: created {
     type: time
     sql: ${TABLE}.created_at ;;
+    description: "This is a dimension group!"
   }
 
   dimension: status {
@@ -32,6 +33,11 @@ view: orders {
     type: count
     drill_fields: [id, users.id, users.first_name, users.last_name, order_items.count]
   }
+
+  # measure: average_count {
+  #   type: average
+  #   sql: ${count} ;;
+  # }
 
   measure: count_organic_users {
     type: count_distinct
