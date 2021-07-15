@@ -6,7 +6,10 @@ include: "*.view"
 # include all the dashboards
 include: "*.dashboard"
 
-
+map_layer: irish_counties {
+  file: "ireland_counties.json"
+  property_key: "NAME_1"
+}
 
 explore: inventory_items {
   hidden: yes
