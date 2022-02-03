@@ -3,6 +3,10 @@ connection: "thelook"
 # include all the views
 include: "*.view"
 
+datagroup: test_datagroup {
+  sql_trigger: 1=0 ;;
+}
+
 # include all the dashboards
 include: "*.dashboard"
 

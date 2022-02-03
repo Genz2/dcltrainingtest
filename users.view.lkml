@@ -15,6 +15,10 @@ view: users {
   dimension: city {
     type: string
     sql: ${TABLE}.city ;;
+    link: {
+      label: "Google search"
+      url: "http://www.google.com/search?q={{ value }}"
+    }
   }
 
   dimension: country {

@@ -12,22 +12,6 @@ view: products {
     sql: ${TABLE}.brand ;;
   }
 
-  dimension: highlighted_brand {
-    type: string
-    sql: ${brand} ;;
-    html:
-    {%if products.brand._value == _user_attributes['brand'] %}
-              <p style="
-              text-align:center;
-              background-color: yellow;"> {{value}}
-               </p>
-    {% else %}
-     <p style="
-              text-align:center;"> {{value}} </p>
-    {% endif %}
-
-    ;;
-  }
 
   dimension: category {
     type: string
@@ -111,7 +95,7 @@ view: products {
   dimension: new_linked_brand {
     type: string
     sql: ${brand} ;;
-    html: <a href="https://www.google.com/search?q={{ value }}">{{ value }}</a>  ;;
+    html: <a href="https://www.google.com/search?q={{ rendered_value }}">{{ value }}</a>  ;;
   }
 
   dimension: item_name {

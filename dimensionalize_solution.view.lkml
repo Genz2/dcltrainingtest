@@ -10,6 +10,7 @@ view: dimensionalize_solution {
       GROUP BY 1
       ORDER BY 2 DESC
        ;;
+    datagroup_trigger: test_datagroup
   }
 
   measure: city_count {
