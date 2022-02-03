@@ -31,7 +31,8 @@ view: users_row {
 
   dimension_group: created {
     type: time
-    sql: ${TABLE}.created_at ;;
+    sql: order by(${TABLE}.created_at) ;;
+
   }
 
   dimension: email {

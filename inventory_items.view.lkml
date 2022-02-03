@@ -26,13 +26,6 @@ view: inventory_items {
     sql: ${TABLE}.created_at ;;
   }
 
-  dimension_group: duration {
-    type: duration
-    sql_start: ${created_date} ;;
-    sql_end: ${sold_date} ;;
-    timeframes: [minute, hour, date, week, time]
-  }
-
   dimension: product_id {
     type: number
     # hidden: yes
