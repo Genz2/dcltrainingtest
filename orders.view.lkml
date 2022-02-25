@@ -58,6 +58,11 @@ view: orders {
       value: "Email"
     }
   }
+dimension: svg_example{
+  type: string
+  sql: 'foo' ;;
+  html: <img src="https://cdn.shopify.com/s/files/1/0496/1029/files/Freesample.svg" /> ;;
+}
 
   parameter: metric_selector {
     type: string

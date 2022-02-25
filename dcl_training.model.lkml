@@ -11,6 +11,11 @@ map_layer: irish_counties {
   property_key: "NAME_1"
 }
 
+access_grant: is_sam {
+  user_attribute: id
+  allowed_values: ["298", "538"]
+}
+
 explore: inventory_items {
   hidden: yes
   join: products {
