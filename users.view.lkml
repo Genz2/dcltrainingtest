@@ -15,6 +15,10 @@ view: users {
   dimension: city {
     type: string
     sql: ${TABLE}.city ;;
+    link: {
+      label: "Google search"
+      url: "http://www.google.com/search?q={{ value }}"
+    }
   }
 
   dimension: country {
@@ -48,6 +52,7 @@ view: users {
   }
 
   dimension: state {
+    map_layer_name: us_states
     type: string
     sql: ${TABLE}.state ;;
   }

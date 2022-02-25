@@ -15,6 +15,7 @@ view: orders {
   dimension: status {
     type: string
     sql: ${TABLE}.status ;;
+    description: "status"
   }
 
   dimension: traffic_source {
@@ -32,6 +33,11 @@ view: orders {
     type: count
     drill_fields: [id, users.id, users.first_name, users.last_name, order_items.count]
   }
+
+  # measure: average_count {
+  #   type: average
+  #   sql: ${count} ;;
+  # }
 
   measure: count_organic_users {
     type: count_distinct

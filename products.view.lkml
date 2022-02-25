@@ -12,6 +12,7 @@ view: products {
     sql: ${TABLE}.brand ;;
   }
 
+
   dimension: category {
     type: string
     sql: ${TABLE}.category ;;
@@ -21,6 +22,7 @@ view: products {
     type: string
     sql: ${TABLE}.department ;;
   }
+
 
   # HTML Tests
   dimension: department_1 {
@@ -85,9 +87,15 @@ view: products {
     group_label: "HTML Tests"
     link: {
       label: "Google search"
-      url: "https://www.google.com/search?q={{value | url_encode}}"
+      url: "https://www.google.com/search?q={{value}}"
     }
     sql: ${brand} ;;
+  }
+
+  dimension: new_linked_brand {
+    type: string
+    sql: ${brand} ;;
+    html: <a href="https://www.google.com/search?q={{ rendered_value }}">{{ value }}</a>  ;;
   }
 
   dimension: item_name {
@@ -124,5 +132,16 @@ view: products {
     "color:blue"</p>
     {% endif %}
     ;;
+  }
+
+  measure: count_conditional_correct {
+    type: count
+    html:
+          {% if orders.status._value == "complete" %}
+          <p style= "color:green">{{ rendered_value }}</p>
+          {% else %}
+           <p style="color:blue">{{ rendered_value }}</p>
+          {% endif %}
+          ;;
   }
 }

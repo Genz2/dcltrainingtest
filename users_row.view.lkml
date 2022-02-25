@@ -11,7 +11,7 @@ view: users_row {
     # used a window function to give each customer a number based on their signup date. (Eg our first ever customer gets the number 1.) I could get it to work in SQL but this is erroring so far in Looker.
     # https://dcltraining.dev.looker.com/sql/9zd5rjjj7cxkbn
     type: number
-    sql: ROW_NUMBER() OVER (ORDER BY created_at)  ;;
+    sql: ROW_NUMBER() OVER (ORDER by created_at)  ;;
   }
 
   dimension: age {
@@ -31,7 +31,8 @@ view: users_row {
 
   dimension_group: created {
     type: time
-    sql: ${TABLE}.created_at ;;
+    sql: order by(${TABLE}.created_at) ;;
+
   }
 
   dimension: email {

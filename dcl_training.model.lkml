@@ -3,6 +3,10 @@ connection: "thelook"
 # include all the views
 include: "*.view"
 
+datagroup: test_datagroup {
+  sql_trigger: 1=0 ;;
+}
+
 # include all the dashboards
 include: "*.dashboard"
 
@@ -49,6 +53,11 @@ explore: order_items {
     type: left_outer
     sql_on: ${orders.user_id} = ${users.id} ;;
     relationship: many_to_one
+  }
+  join: sql_runner_query_test {
+    type: left_outer
+    sql_on: ${sql_runner_query_test.users_city} = ${users.city} ;;
+    relationship: one_to_many
   }
 
   join: orders_derived {
