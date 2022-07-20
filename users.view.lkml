@@ -5,6 +5,13 @@ view: users {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
+    tags: ["user_id"]
+  }
+
+  dimension: anonymous_id {
+    sql: ${id} ;;
+    type: number
+    tags: ["segment_anonymous_id"]
   }
 
   dimension: age {
@@ -34,6 +41,7 @@ view: users {
   dimension: email {
     type: string
     sql: ${TABLE}.email ;;
+    tags: ["email"]
   }
 
   dimension: first_name {
@@ -123,6 +131,12 @@ WHEN ${state}='Wyoming' THEN ''
   dimension: zip {
     type: number
     sql: ${TABLE}.zip ;;
+  }
+
+  dimension: group {
+    type: number
+    sql: ${zip} ;;
+    tags: ["segment_group_id"]
   }
 
   measure: count {

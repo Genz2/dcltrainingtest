@@ -11,6 +11,7 @@ view: dimensionalize_solution {
       ORDER BY 2 DESC
        ;;
     datagroup_trigger: test_datagroup
+    distribution_style: all
   }
 
   measure: city_count {
