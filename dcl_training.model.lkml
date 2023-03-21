@@ -37,7 +37,6 @@ explore: orders_derived {
 # Option 2: Join in orders_derived back into the order_items explore.
 # Note that we join on the only shared dimension we have, namely Users City
 explore: order_items {
-  persist_with: orders_datagroup
   join: orders {
     type: left_outer
     sql_on: ${order_items.order_id} = ${orders.id} ;;
@@ -90,9 +89,6 @@ explore: product_facts {
     sql_on: ${product_facts.product_id} = ${products.id} ;;
     relationship: many_to_one
   }
-}
-datagroup: orders_datagroup {
-  sql_trigger:  SELECT CURRENT_DATE;;
 }
 
 explore: products {
