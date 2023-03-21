@@ -59,7 +59,7 @@ explore: order_items {
     sql_on: ${sql_runner_query_test.users_city} = ${users.city} ;;
     relationship: one_to_many
   }
-
+#TEST
   join: orders_derived {
     type: left_outer
     relationship: many_to_one
